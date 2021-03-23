@@ -84,7 +84,7 @@ const heading2FontSize = {
 }
 
 const heading3Size = 1.2
-const heading3FontSize = {
+export const heading3FontSize = {
   default: `${heading3Size}rem`,
   XS: `${heading3Size * 0.8}rem`,
   S: `${heading3Size * 0.9}rem`,
@@ -93,7 +93,7 @@ const heading3FontSize = {
 }
 
 const heading3PoppinsSize = 1.3
-const heading3PoppinsFontSize = {
+export const heading3PoppinsFontSize = {
   default: `${heading3PoppinsSize}rem`,
   XS: `${heading3PoppinsSize * 0.8}rem`,
   S: `${heading3PoppinsSize * 0.9}rem`,
@@ -128,7 +128,7 @@ const paragraphMarginBottom = {
 }
 
 const buttonSize = 1.3
-const buttonFontSize = {
+export const buttonFontSize = {
   default: `${buttonSize}rem`,
   XS: `${buttonSize * 0.8}rem`,
   S: `${buttonSize * 0.9}rem`,
@@ -196,7 +196,7 @@ export const FlexContainer = styled.div`
 `;
 
 // Typography
-type TypesHeading = {
+export type TypesHeading = {
   width?: string;
   height?: string;
   marginBottom?: string;

@@ -24,30 +24,6 @@ export const getDonations = () => async dispatch => {
 }
 
 
-// Add Donation
-export const addDonation = formData => async dispatch => {
-    const config = {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }
-    try {
-
-        const res = await axios.post('/api/donation', formData, config);
-
-        dispatch({
-            type: ADD_DONATION,
-            payload: res.data
-        })
-
-    } catch(err) {
-        dispatch({
-            type: DONATION_ERROR,
-            payload: { msg: err.response.statusText, status: err.response.status }
-          });
-    }
-}
-
 // Add comment to donation
 export const addComment = (donationId, formData) => async dispatch => {
     const config = {

@@ -6,7 +6,7 @@ import {
 } from "../types";
 
 const initialState = {
-  donations: null,
+  donations: [],
   loading: true,
   error: {},
 };
@@ -21,13 +21,6 @@ export default function foo(state = initialState, actions) {
         donations: payload,
         loading: false,
       };
-    case ADD_DONATION: {
-      return {
-        ...state,
-        donations: [payload, ...state.donations],
-        loading: false,
-      };
-    }
     case ADD_COMMENT: {
       state.donations.map((donation) => {
         if (donation._id === id) {
