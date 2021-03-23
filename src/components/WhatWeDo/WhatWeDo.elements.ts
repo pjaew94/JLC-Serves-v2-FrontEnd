@@ -130,7 +130,7 @@ export const MiniPictureCard = styled(FlexContainer)`
   padding: 10px;
   flex-direction: column;
   min-height: 500px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin-bottom: 30px;
   justify-content: flex-start;
 

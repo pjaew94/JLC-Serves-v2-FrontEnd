@@ -3,8 +3,8 @@ import {
 } from '../types';
 
 
-// Donation Staging (After they've entered information and proceed to payment page)
-export const stageDonation = formData => async dispatch => {
+// Donation Complete
+export const completeDonation = formData => async dispatch => {
     try {
         dispatch({
             type: DONATION_STAGING,

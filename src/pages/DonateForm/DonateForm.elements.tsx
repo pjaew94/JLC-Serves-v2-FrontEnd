@@ -134,6 +134,7 @@ export const CardElementContainer = styled.div`
 
 export const DonateHeading1 = styled(Heading1)`
   @media only screen and ${device.mobileS} {
+    font-size: 2.2rem;
     border-bottom: ${3}px solid ${colors.primaryColor};
     margin-bottom: ${5 * 0.8}px;
   }

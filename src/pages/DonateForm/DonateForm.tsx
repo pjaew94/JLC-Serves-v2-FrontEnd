@@ -22,9 +22,10 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { device } from "./../../globalStyles";
+import { completeDonation } from './../../redux/actions/stripe';
 
 const stripePromise = loadStripe(
-  "pk_test_51IUfrBJhW8qJo9NGLa5bT8ioIPUNBSd0dCIfLU7kWDwt1bxWgt90Gxx59ssei7H8IgQpu0jgT6stiabm8OPZVxub00FpULdVC0"
+  "pk_live_51IUfrBJhW8qJo9NGXGscu6tDs5seyDWzYnUBOBWk2DOQlRxQXJbnGUgX0x2mKyO9EeduffwCEhOcHNgZW3g6qEAO00ChaMtoFZ"
 );
 
 type Comment = {
@@ -69,6 +70,7 @@ const CheckoutForm: FC = () => {
       }
       const data = JSON.stringify(props);
       await axios.post("/api/donation", data, config);
+      await dispatch(completeDonation(props))
       history.push("/success");
     } catch (err) {
       console.error(err.message);

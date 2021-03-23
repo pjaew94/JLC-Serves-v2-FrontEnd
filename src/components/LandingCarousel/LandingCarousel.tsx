@@ -1,7 +1,5 @@
 import { FC } from "react";
 import Carousel from "react-material-ui-carousel";
-
-import { Paper, Button } from "@material-ui/core";
 import {
   PictureBoarder,
   Image,
