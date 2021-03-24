@@ -91,7 +91,7 @@ const CheckoutForm: FC = () => {
 
     try {
       const { data: clientSecret } = await axios.post(
-        "/api/stripe/payment_intents",
+        "https://jlc-serves2.herokuapp.com/api/stripe/payment_intents",
         {
           amount: e.target.amount.value * 100,
         }
