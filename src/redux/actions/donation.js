@@ -10,7 +10,7 @@ import {
 // Get all donations
 export const getDonations = () => async dispatch => {
     try {
-        const res = await axios.get('/api/donation');
+        const res = await axios.get('https://jlc-serves2.herokuapp.com/api/donation');
         dispatch({
             type: GET_DONATIONS,
             payload: res.data

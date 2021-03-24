@@ -69,7 +69,7 @@ const CheckoutForm: FC = () => {
         props.donator = "Anonymous";
       }
       const data = JSON.stringify(props);
-      await axios.post("/api/donation", data, config);
+      await axios.post("https://jlc-serves2.herokuapp.com/api/donation", data, config);
       await dispatch(completeDonation(props))
       history.push("/success");
     } catch (err) {
