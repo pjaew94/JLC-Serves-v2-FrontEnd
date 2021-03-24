@@ -60,7 +60,7 @@ export const Image = styled.img`
       width: 500px;
     }
     @media only screen and ${device.desktop} {
-      width: 600px;
+      width: 570px;
     }
     @media only screen and ${device.desktopL} {
       width: 950px;

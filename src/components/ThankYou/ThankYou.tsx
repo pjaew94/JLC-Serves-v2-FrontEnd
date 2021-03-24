@@ -20,7 +20,7 @@ const ThankYou: FC = () => {
     ]
 
    return (
-       <TYPageContainer>
+       <TYPageContainer name="thank-you">
            <TYHeading1>Special Thank You</TYHeading1>
            <TYLogoContainer>
             {logos.map((item, i) => {

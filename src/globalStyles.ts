@@ -53,6 +53,11 @@ a {
 
 `;
 
+
+export type ReactScrollType = {
+  name: string
+}
+
 // Colors
 
 export const colors = {
@@ -353,9 +358,15 @@ export const Button = styled(Link)<TypesButton>`
     padding: ${20 * 0.9}px ${35 * 0.6}px;
     border-radius: 2px;
   }
+  
+  @media only screen and ${device.tablet} {
+    font-size: ${buttonFontSize.default};
+    padding: ${20 * 1.2}px ${35 * 1.2}px;
+    border-radius: 2px;
+  }
 
   @media only screen and ${device.desktop} {
-    font-size: ${buttonFontSize.XS};
+    font-size: ${buttonFontSize.default};
     padding: ${20 * 0.8}px ${35 * 0.8}px;
   }
   @media only screen and ${device.desktopL} {

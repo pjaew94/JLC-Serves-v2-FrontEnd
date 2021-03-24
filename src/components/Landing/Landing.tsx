@@ -20,7 +20,7 @@ const Landing: FC = () => {
   });
   return (
     <>
-      <LandingPageContainer>
+      <LandingPageContainer name="home">
         <LandingLeftFlexContainer>
           {isMobile ? (
             <>

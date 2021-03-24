@@ -45,7 +45,7 @@ const WhoWeAre: FC = () => {
   ];
   return (
     <>
-      <WhoWeArePageContainer>
+      <WhoWeArePageContainer name="who-we-are">
         <WhoWeAreHeading1>Who We Are</WhoWeAreHeading1>
         {isMobile ? (
           <Paragraph>

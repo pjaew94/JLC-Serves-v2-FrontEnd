@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 
 const Success: FC = () => {
   const isMobileS = useMediaQuery({ query: device.mobileS });
+  const tablet = useMediaQuery({ query: device.tablet });
   const { stripe } = useSelector((state: any) => state);
 
 //   const successPictures = [
@@ -40,7 +41,7 @@ const Success: FC = () => {
   return (
     <SuccessPageContainer>
       <SuccessFlexContainer>
-        {isMobileS ? (
+        {isMobileS || tablet ? (
           <>
             <SuccessHeading>Thank You For</SuccessHeading>
             <SuccessHeading>Your Donation!</SuccessHeading>
@@ -55,10 +56,10 @@ const Success: FC = () => {
         </SuccessParagraph>
 
         <SuccessButtonContainer>
-          <Button style={{ marginRight: "5%" }} to="/" primary large>
+          <Button style={{ marginRight: "5%" }} to="/" primary>
             Home
           </Button>
-          <Button to="/donations" primary={false} large>
+          <Button to="/donations" primary={false}>
             See Donations
           </Button>
         </SuccessButtonContainer>

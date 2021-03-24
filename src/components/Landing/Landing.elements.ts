@@ -8,9 +8,11 @@ import {
   Button,
   device,
   size,
+  ReactScrollType
 } from "../../globalStyles";
 
-export const LandingPageContainer = styled(PageContainer)`
+
+export const LandingPageContainer = styled(PageContainer)<ReactScrollType>`
   padding: 0 15%;
   height: 75vh;
   justify-content: space-between;
@@ -24,7 +26,7 @@ export const LandingPageContainer = styled(PageContainer)`
     flex-direction: column;
     min-height: auto;
     max-height: auto;
-    padding: 10% 10% 5% 10%;
+    padding: 24% 10% 5% 10%;
     background: linear-gradient(
       180deg,
       rgba(240, 250, 247, 1) 39%,
@@ -36,7 +38,7 @@ export const LandingPageContainer = styled(PageContainer)`
     flex-direction: column;
     min-height: auto;
     max-height: auto;
-    padding: 10% 10% 5% 10%;
+    padding: 15% 10% 5% 10%;
     background: linear-gradient(
       180deg,
       rgba(240, 250, 247, 1) 39%,
@@ -80,7 +82,7 @@ export const LandingLeftFlexContainer = styled(FlexContainer)`
 `;
 
 export const LandingRightFlexContainer = styled(FlexContainer)`
-  margin-top: 5%;
+  margin-top: 7%;
 
   @media only screen and ${device.mobileS} {
     margin-top: 10%;

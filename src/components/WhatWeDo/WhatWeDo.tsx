@@ -28,7 +28,7 @@ const WhatWeDo: FC = () => {
   ];
 
   return (
-    <WWDPageContainer>
+    <WWDPageContainer name="mission">
       <WWDPictureContainer>
         {miniPictures.map((item, i) => {
           return (

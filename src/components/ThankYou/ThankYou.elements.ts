@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { colors, Heading1, PageContainer, device, FlexContainer } from './../../globalStyles';
+import { colors, Heading1, PageContainer, device, FlexContainer,ReactScrollType } from './../../globalStyles';
 
 
-export const TYPageContainer = styled(PageContainer)`
+export const TYPageContainer = styled(PageContainer)<ReactScrollType>`
 background: ${colors.softBlueColor};
 padding-top: 5%;
 padding-bottom: 5%;

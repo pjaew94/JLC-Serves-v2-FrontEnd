@@ -7,9 +7,10 @@ import {
   PageContainer,
   colors,
   device,
+  ReactScrollType
 } from "./../../globalStyles";
 
-export const WWDPageContainer = styled(PageContainer)`
+export const WWDPageContainer = styled(PageContainer)<ReactScrollType>`
   justify-content: space-between;
   padding-bottom: 5%;
 

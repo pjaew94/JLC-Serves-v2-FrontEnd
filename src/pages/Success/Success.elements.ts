@@ -3,12 +3,34 @@ import { PageContainer, FlexContainer, Heading1, Paragraph , device, colors } fr
 
 export const SuccessPageContainer = styled(PageContainer)`
     min-height: 100vh;
+    width: 100vw;
+
 `
 
 export const SuccessFlexContainer = styled(FlexContainer)`
-    width: 50%;
+    width: 100%;
     flex-direction: column;
-    
+    @media only screen and ${device.mobileS} {
+        width: 100%;
+      }
+      @media only screen and ${device.tablet} {
+        width: 100%;
+      }
+      @media only screen and ${device.laptopL} {
+        width: 70%;
+      }
+      @media only screen and ${device.desktop} {
+        width: 80%;
+      }
+      @media only screen and ${device.desktop} {
+
+      }
+      @media only screen and ${device.desktopL} {
+        width: 60%;
+      }
+      @media only screen and ${device.desktopXL} {
+        width: 60%;
+      }
 `
 
 export const SuccessButtonContainer = styled(FlexContainer)`
@@ -46,5 +68,6 @@ margin-bottom: 20px;
 
 export const SuccessParagraph = styled(Paragraph)`
     margin-bottom: 50px;
+
 
 `

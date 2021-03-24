@@ -5,10 +5,11 @@ import {
   Heading1,
   paragraphFontSize,
   device,
-  colors
+  colors,
+  ReactScrollType
 } from "../../globalStyles";
 
-export const WhoWeArePageContainer = styled(PageContainer)`
+export const WhoWeArePageContainer = styled(PageContainer)<ReactScrollType>`
   flex-direction: column;
   padding-top: 5%;
   padding-bottom: 5%;
