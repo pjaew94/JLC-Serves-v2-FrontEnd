@@ -25,7 +25,7 @@ import { device } from "./../../globalStyles";
 import { completeDonation } from './../../redux/actions/stripe';
 
 const stripePromise = loadStripe(
-  "pk_live_51IUfrBJhW8qJo9NGXGscu6tDs5seyDWzYnUBOBWk2DOQlRxQXJbnGUgX0x2mKyO9EeduffwCEhOcHNgZW3g6qEAO00ChaMtoFZ"
+  "pk_test_51IUfrBJhW8qJo9NGLa5bT8ioIPUNBSd0dCIfLU7kWDwt1bxWgt90Gxx59ssei7H8IgQpu0jgT6stiabm8OPZVxub00FpULdVC0"
 );
 
 type Comment = {
@@ -144,7 +144,7 @@ const CheckoutForm: FC = () => {
       fontSize:
         isMobileS || tablet || laptopL
           ? "1.1rem"
-          : desktop
+          : desktop 
           ? "1rem"
           : desktopL
           ? "1.6rem"
