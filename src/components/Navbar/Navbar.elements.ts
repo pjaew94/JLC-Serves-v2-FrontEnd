@@ -61,7 +61,7 @@ export const NavbarScrollLink = styled(ScrollLink)<ScrollLinkTypes>`
   }
 
   @media only screen and ${device.mobileS} {
-      font-size: ${1 * 1.4}rem;
+      font-size: ${1 * 1.2}rem;
   }
   @media only screen and ${device.tablet} {
     font-size: ${1 * 1.4}rem;
@@ -100,7 +100,7 @@ export const MemberLoginButton = styled(Link)`
 @media only screen and ${device.mobileS} {
     padding: ${13 * 0.9}px ${15 * 0.9}px;
     border-radius: ${2 * 0.9}px;
-    font-size: ${1 * 1.4}rem;
+    font-size: ${1 * 1.2}rem;
 }
 @media only screen and ${device.tablet} {
     padding: ${13 * 1.2}px ${15 * 1.2}px;

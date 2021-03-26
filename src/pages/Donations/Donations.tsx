@@ -18,7 +18,6 @@ import { useMediaQuery } from "react-responsive";
 import { device } from "../../globalStyles";
 
 
-
 const Donations: FC = () => {
   const dispatch = useDispatch();
   const { donation } = useSelector((state: any) => state);

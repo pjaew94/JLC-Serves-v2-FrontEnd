@@ -6,7 +6,6 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from 'redux-persist/integration/react';
 import store, {persistor} from "./redux/store";
-import { loadUser } from "./redux/actions/user";
 import GlobalStyle from './globalStyles';
 import Home from "./pages/Home/Home";
 import DonateForm from './pages/DonateForm/DonateForm';
@@ -16,9 +15,6 @@ import Donations from './pages/Donations/Donations';
 
 
 const App = () => {
-  useEffect(() => {
-    store.dispatch(loadUser());
-  });
 
   return (
     <Provider store={store}>
