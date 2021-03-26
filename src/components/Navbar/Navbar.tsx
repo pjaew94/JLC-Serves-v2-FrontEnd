@@ -14,8 +14,26 @@ import {
 import { useMediaQuery } from "react-responsive";
 import { device } from "./../../globalStyles";
 
-const Navbar: FC = () => {
+interface HamburgerType {
+  setShowNavigator: any;
+  showNavigator: boolean;
+}
+const HamburgerFC: FC<HamburgerType> = ({ setShowNavigator, showNavigator }) => {
+  return (
+    <>
+      {window.location.pathname !== "/donations" ? (
+        <Hamburger onClick={() => setShowNavigator(!showNavigator)}>
+          <HamburgerLine1 />
+          <HamburgerLine2 />
+        </Hamburger>
+      ) : (
+        <MemberLoginButton to={"/donate"}>Donate</MemberLoginButton>
+      )}
+    </>
+  );
+};
 
+const Navbar: FC = () => {
   const [scrollingUp, setScrollingUp] = useState(false);
   const [showNavigator, setShowNavigator] = useState(false);
   const isMobileS = useMediaQuery({ query: device.mobileS });
@@ -72,6 +90,8 @@ const Navbar: FC = () => {
     </>
   );
 
+
+
   return (
     <>
       <NavbarContainer scrollUp={scrollingUp}>
@@ -79,10 +99,10 @@ const Navbar: FC = () => {
           JLC Serves<LogoPeriod>.</LogoPeriod>
         </JLCLogo>
         {isMobileS || tablet ? (
-          <Hamburger onClick={() => setShowNavigator(!showNavigator)}>
-            <HamburgerLine1 />
-            <HamburgerLine2 />
-          </Hamburger>
+          <HamburgerFC
+            setShowNavigator={setShowNavigator}
+            showNavigator={showNavigator}
+          />
         ) : (
           <LinksContainer>
             {smoothLinks}
