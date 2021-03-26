@@ -14,7 +14,7 @@ export const DonationsPageContainer = styled(PageContainer)`
   flex-direction: column;
 
   @media only screen and ${device.mobileS} {
-      padding-top: 100px;
+      padding-top: 130px;
 }
 
 @media only screen and ${device.tablet} {

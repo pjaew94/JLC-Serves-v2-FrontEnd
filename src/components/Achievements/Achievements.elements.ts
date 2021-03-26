@@ -13,7 +13,8 @@ export const AchievementsPageContainer = styled(PageContainer)`
   @media only screen and ${device.mobileS} {
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 10% 15%;
+    padding: 100px 15%;
+    height: auto;
 }
   @media only screen and ${device.tablet} {
     min-height: 200px;

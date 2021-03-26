@@ -34,7 +34,7 @@ const HamburgerFC: FC<HamburgerType> = ({ setShowNavigator, showNavigator }) => 
 };
 
 const Navbar: FC = () => {
-  const [scrollingUp, setScrollingUp] = useState(false);
+  const [scrollingUp, setScrollingUp] = useState(true);
   const [showNavigator, setShowNavigator] = useState(false);
   const isMobileS = useMediaQuery({ query: device.mobileS });
   const tablet = useMediaQuery({ query: device.tablet });

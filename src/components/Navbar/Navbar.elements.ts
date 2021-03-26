@@ -21,6 +21,7 @@ export const NavbarContainer = styled(PageContainer)<NavbarContainerTypes>`
   transition: 0.2s all ease-in;
 
 
+
   @media only screen and ${device.mobileS} {
       background: white;
       padding-bottom: 20px;
