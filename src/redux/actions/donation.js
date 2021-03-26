@@ -2,7 +2,6 @@ import axios from 'axios';
 import {
     GET_DONATIONS,
     ADD_COMMENT,
-    ADD_DONATION,
     DONATION_ERROR
 } from '../types';
 

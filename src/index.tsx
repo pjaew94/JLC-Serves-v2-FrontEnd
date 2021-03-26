@@ -11,6 +11,7 @@ import GlobalStyle from './globalStyles';
 import Home from "./pages/Home/Home";
 import DonateForm from './pages/DonateForm/DonateForm';
 import Success from "./pages/Success/Success";
+import Donations from './pages/Donations/Donations';
 
 
 
@@ -27,6 +28,7 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/donate' component={DonateForm} />
+          <Route exact path='/donations' component={Donations} />
           <Route exact path='/success' component={Success} />
         </Switch>
       </Router>

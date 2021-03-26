@@ -35,7 +35,7 @@ type Comment = {
 };
 
 type OnSuccessfulCheckout = {
-  amount: number;
+  amount: string;
   donator?: string;
   message?: string;
   location?: string;
@@ -119,8 +119,11 @@ const CheckoutForm: FC = () => {
         return;
       }
 
+
+      const amountInt = +e.target.amount.value
+
       const props = {
-        amount: e.target.amount.value,
+        amount: amountInt.toFixed(2),
         donator: e.target.name.value,
         location: e.target.location.value,
       };

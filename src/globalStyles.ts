@@ -109,7 +109,7 @@ export const heading3PoppinsFontSize = {
 const paragraphSize = 1
 export const paragraphFontSize = {
   default: `${paragraphSize}rem`,
-  XS: `${paragraphSize * 0.8}rem`,
+  XS: `${paragraphSize * 0.9}rem`,
   S: `${paragraphSize * 0.9}rem`,
   L: `${paragraphSize * 1.6}rem`,
   XL: `${paragraphSize * 2.2}rem`

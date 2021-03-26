@@ -19,6 +19,28 @@ const Navbar: FC = () => {
   const isMobileS = useMediaQuery({ query: device.mobileS });
   const tablet = useMediaQuery({ query: device.tablet });
 
+  const smoothLinks = window.location.pathname !== "/donations" && (
+    <>
+      <NavbarScrollLink to="home" spy={true} smooth={true} duration={1000}>
+        Home
+      </NavbarScrollLink>
+      <NavbarScrollLink
+        to="who-we-are"
+        spy={true}
+        smooth={true}
+        duration={1000}
+      >
+        Who We Are
+      </NavbarScrollLink>
+      <NavbarScrollLink to="mission" spy={true} smooth={true} duration={1000}>
+        Our Mission
+      </NavbarScrollLink>
+      <NavbarScrollLink to="thank-you" spy={true} smooth={true} duration={1000}>
+        Thank You
+      </NavbarScrollLink>
+    </>
+  );
+
   return (
     <>
       <NavbarContainer>
@@ -32,23 +54,66 @@ const Navbar: FC = () => {
           </Hamburger>
         ) : (
           <LinksContainer>
-            <NavbarScrollLink to="home" spy={true} smooth={true} duration={1000} >
-              Home
-            </NavbarScrollLink>
-            <NavbarScrollLink to="who-we-are" spy={true} smooth={true} duration={1000} >Who We Are</NavbarScrollLink>
-            <NavbarScrollLink to="mission" spy={true} smooth={true} duration={1000}>Our Mission</NavbarScrollLink>
-            <NavbarScrollLink to="thank-you" spy={true} smooth={true} duration={1000}>Thank You</NavbarScrollLink>
-            <MemberLoginButton to="/login">Member Login</MemberLoginButton>
+            {smoothLinks}
+            <MemberLoginButton
+              to={
+                window.location.pathname === "/donations" ? "/donate" : "/login"
+              }
+            >
+              {window.location.pathname === "/donations"
+                ? "Donate"
+                : "Member Login"}
+            </MemberLoginButton>
           </LinksContainer>
         )}
       </NavbarContainer>
       {isMobileS || tablet ? (
         <Navigator navigator={showNavigator}>
-          <NavbarScrollLink to="home" spy={true} smooth={true} duration={1000} inNavigator>Home</NavbarScrollLink>
-          <NavbarScrollLink to="who-we-are" spy={true} smooth={true} duration={1000} inNavigator>Who We Are</NavbarScrollLink>
-          <NavbarScrollLink to="mission" spy={true} smooth={true} duration={1000} inNavigator>Our Mission</NavbarScrollLink>
-          <NavbarScrollLink to="thank-you" spy={true} smooth={true} duration={1000} inNavigator>Thank You</NavbarScrollLink>
-          <MemberLoginButton to="/login">Member Login</MemberLoginButton>
+          <NavbarScrollLink
+            to="home"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            inNavigator
+          >
+            Home
+          </NavbarScrollLink>
+          <NavbarScrollLink
+            to="who-we-are"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            inNavigator
+          >
+            Who We Are
+          </NavbarScrollLink>
+          <NavbarScrollLink
+            to="mission"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            inNavigator
+          >
+            Our Mission
+          </NavbarScrollLink>
+          <NavbarScrollLink
+            to="thank-you"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            inNavigator
+          >
+            Thank You
+          </NavbarScrollLink>
+          <MemberLoginButton
+            to={
+              window.location.pathname === "/donations" ? "/donate" : "/login"
+            }
+          >
+            {window.location.pathname === "/donations"
+              ? "Donate"
+              : "Member Login"}
+          </MemberLoginButton>
         </Navigator>
       ) : null}
     </>
