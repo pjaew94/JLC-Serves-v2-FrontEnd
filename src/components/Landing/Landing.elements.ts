@@ -27,11 +27,7 @@ export const LandingPageContainer = styled(PageContainer)<ReactScrollType>`
     min-height: auto;
     max-height: auto;
     padding: 24% 10% 5% 10%;
-    background: linear-gradient(
-      180deg,
-      rgba(240, 250, 247, 1) 39%,
-      rgba(255, 255, 255, 1) 100%
-    );
+    background: none;
   }
   @media only screen and ${device.tablet} {
     height: auto;
@@ -39,11 +35,7 @@ export const LandingPageContainer = styled(PageContainer)<ReactScrollType>`
     min-height: auto;
     max-height: auto;
     padding: 15% 10% 5% 10%;
-    background: linear-gradient(
-      180deg,
-      rgba(240, 250, 247, 1) 39%,
-      rgba(255, 255, 255, 1) 100%
-    );
+    background: none;
   }
   @media only screen and ${device.laptopL} {
     min-height: 700px;

@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import {
   Navigator,
   JLCLogo,
@@ -15,27 +15,58 @@ import { useMediaQuery } from "react-responsive";
 import { device } from "./../../globalStyles";
 
 const Navbar: FC = () => {
+
+  const [scrollingUp, setScrollingUp] = useState(false);
   const [showNavigator, setShowNavigator] = useState(false);
   const isMobileS = useMediaQuery({ query: device.mobileS });
   const tablet = useMediaQuery({ query: device.tablet });
 
+  useEffect(() => {
+    const threshold = 0;
+    let lastScrollY = window.pageYOffset;
+    let ticking = false;
+
+    const updateScrollDir = () => {
+      const scrollY = window.pageYOffset;
+
+      if (Math.abs(scrollY - lastScrollY) < threshold) {
+        ticking = false;
+        return;
+      }
+      setScrollingUp(scrollY > lastScrollY ? false : true);
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollDir);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollingUp]);
+
   const smoothLinks = window.location.pathname !== "/donations" && (
     <>
-      <NavbarScrollLink to="home" spy={true} smooth={true} duration={1000}>
+      <NavbarScrollLink to="home" spy={true} smooth={true} duration={1500}>
         Home
       </NavbarScrollLink>
       <NavbarScrollLink
         to="who-we-are"
         spy={true}
         smooth={true}
-        duration={1000}
+        duration={1500}
       >
         Who We Are
       </NavbarScrollLink>
-      <NavbarScrollLink to="mission" spy={true} smooth={true} duration={1000}>
+      <NavbarScrollLink to="mission" spy={true} smooth={true} duration={1500}>
         Our Mission
       </NavbarScrollLink>
-      <NavbarScrollLink to="thank-you" spy={true} smooth={true} duration={1000}>
+      <NavbarScrollLink to="thank-you" spy={true} smooth={true} duration={1500}>
         Thank You
       </NavbarScrollLink>
     </>
@@ -43,7 +74,7 @@ const Navbar: FC = () => {
 
   return (
     <>
-      <NavbarContainer>
+      <NavbarContainer scrollUp={scrollingUp}>
         <JLCLogo to="/">
           JLC Serves<LogoPeriod>.</LogoPeriod>
         </JLCLogo>
@@ -55,15 +86,7 @@ const Navbar: FC = () => {
         ) : (
           <LinksContainer>
             {smoothLinks}
-            <MemberLoginButton
-              to={
-                window.location.pathname === "/donations" ? "/donate" : "/login"
-              }
-            >
-              {window.location.pathname === "/donations"
-                ? "Donate"
-                : "Member Login"}
-            </MemberLoginButton>
+            <MemberLoginButton to={"/donate"}>Donate</MemberLoginButton>
           </LinksContainer>
         )}
       </NavbarContainer>
@@ -74,6 +97,7 @@ const Navbar: FC = () => {
             spy={true}
             smooth={true}
             duration={1000}
+            onSetActive={() => setShowNavigator(false)}
             inNavigator
           >
             Home
@@ -83,6 +107,7 @@ const Navbar: FC = () => {
             spy={true}
             smooth={true}
             duration={1000}
+            onSetActive={() => setShowNavigator(false)}
             inNavigator
           >
             Who We Are
@@ -92,6 +117,7 @@ const Navbar: FC = () => {
             spy={true}
             smooth={true}
             duration={1000}
+            onSetActive={() => setShowNavigator(false)}
             inNavigator
           >
             Our Mission
@@ -101,19 +127,12 @@ const Navbar: FC = () => {
             spy={true}
             smooth={true}
             duration={1000}
+            onSetActive={() => setShowNavigator(false)}
             inNavigator
           >
             Thank You
           </NavbarScrollLink>
-          <MemberLoginButton
-            to={
-              window.location.pathname === "/donations" ? "/donate" : "/login"
-            }
-          >
-            {window.location.pathname === "/donations"
-              ? "Donate"
-              : "Member Login"}
-          </MemberLoginButton>
+          <MemberLoginButton to={"/donate"}>Donate</MemberLoginButton>
         </Navigator>
       ) : null}
     </>

@@ -8,17 +8,29 @@ import {
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from 'react-router-dom';
 
-export const NavbarContainer = styled(PageContainer)`
+type NavbarContainerTypes = {
+    scrollUp?: boolean
+}
+export const NavbarContainer = styled(PageContainer)<NavbarContainerTypes>`
   justify-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
   padding-top: 30px;
   z-index: 11;
+  transition: 0.2s all ease-in;
+
 
   @media only screen and ${device.mobileS} {
+      background: white;
+      padding-bottom: 20px;
+      position: fixed;
+      transform: ${props => props.scrollUp ? "translateY(0)" : "translateY(-100px)"};
 }
 @media only screen and ${device.tablet} {
+    background: white;
+    padding-bottom: 30px;
+    position: fixed;
 }
 @media only screen and ${device.laptopL} {
     padding-top: ${30 * 0.9}px;
@@ -134,9 +146,6 @@ export const JLCLogo = styled(Link)`
   cursor: pointer;
   transition: 0.3s all ease-in-out;
   color: black;
-  &:hover {
-      color: ${colors.primaryColor};
-  }
 
   @media only screen and ${device.mobileS} {
     font-size: ${1.5 * 0.8}rem;
@@ -222,7 +231,7 @@ export const Navigator = styled(FlexContainer)<NavigatorTypes>`
     height: 100vh;
     width: 100vw;
     transition: 0.3s all ease-in-out;
-    background: ${colors.softGreenColor};
+    background: white;
     z-index: 10;
     transform: ${(props) => props.navigator ? "translateX(0)" : "translateX(100vw)"};
     
