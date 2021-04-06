@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ReactDOM from "react-dom";
 
@@ -25,7 +24,7 @@ const App = () => {
           <Route exact path='/' component={Home} />
           <Route exact path='/donate' component={DonateForm} />
           <Route exact path='/donations' component={Donations} />
-          <Route exact path='/success' component={Success} />
+          <Route exact path='/payment' component={Success} />
         </Switch>
       </Router>
       </PersistGate>

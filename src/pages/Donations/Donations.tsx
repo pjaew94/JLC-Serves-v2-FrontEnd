@@ -46,7 +46,7 @@ const Donations: FC = () => {
         <DonationsContainer>
           {donation && donation.donations.map((item, i) => {
             return (
-              <DonationCard lastCard={i + 1 !== donation.donations.length && true}>
+              <DonationCard key={i} lastCard={i + 1 !== donation.donations.length && true}>
                 <LogoContainer>
                   <Logo />
                 </LogoContainer>

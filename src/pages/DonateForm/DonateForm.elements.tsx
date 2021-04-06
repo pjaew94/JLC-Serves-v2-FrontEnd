@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FC } from "react";
 import {
   FlexContainer,
   device,
@@ -14,7 +13,84 @@ export const FormContainer = styled(FlexContainer)`
   width: 100vw;
   min-height: 100vh;
 `;
+export const FormFieldContainer = styled(FlexContainer)`
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
 
+  margin-bottom: 20px;
+
+  @media only screen and ${device.mobileS} {
+    flex-direction: column;
+  }
+  @media only screen and ${device.tablet} {
+    margin-bottom: ${20 * 0.9}px;
+  }
+  @media only screen and ${device.laptopL} {
+    margin-bottom: ${20 * 0.9}px;
+  }
+  @media only screen and ${device.desktop} {
+  }
+  @media only screen and ${device.desktopL} {
+    margin-bottom: ${20 * 1.6}px;
+  }
+  @media only screen and ${device.desktopXL} {
+    margin-bottom: ${20 * 2.2}px;
+  }
+`;
+export const FormFieldLeft = styled(FlexContainer)`
+flex-direction: column;
+width: 50%;
+align-items: flex-start;
+padding-right: 5%;
+
+
+
+@media only screen and ${device.mobileS} {
+  align-items: flex-start;
+  padding-left: 0;
+}
+@media only screen and ${device.tablet} {
+  align-items: flex-end;
+}
+@media only screen and ${device.laptopL} {
+  align-items: flex-end;
+}
+@media only screen and ${device.desktop} {
+  align-items: flex-end;
+}
+@media only screen and ${device.desktopL} {
+  align-items: flex-end;
+}
+@media only screen and ${device.desktopXL} {
+
+  align-items: flex-end;
+}
+`
+export const FormFieldRight = styled(FlexContainer)`
+flex-direction: column;
+width: 50%;
+align-items: flex-start;
+@media only screen and ${device.mobileS} {
+  width: 100%;
+}
+@media only screen and ${device.tablet} {
+
+}
+@media only screen and ${device.laptopL} {
+  padding-right: 15%;
+}
+@media only screen and ${device.desktop} {
+}
+@media only screen and ${device.desktopL} {
+  width: 50%;
+  padding-right: 20%;
+}
+@media only screen and ${device.desktopXL} {
+  width: 50%;
+  padding-right: 20%;
+}
+`
 export const Form = styled.form`
   display: flex;
   align-items: center;
@@ -22,7 +98,7 @@ export const Form = styled.form`
   flex-direction: column;
   height: auto;
   padding: 100px 70px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
   border-radius: 5px;
 
   @media only screen and ${device.mobileS} {
@@ -37,38 +113,13 @@ export const Form = styled.form`
     padding: ${100 * 0.5}px ${70 * 1}px;
   }
   @media only screen and ${device.desktop} {
+    width: 60%;
   }
   @media only screen and ${device.desktopL} {
     padding: ${100 * 1.6}px ${70 * 1.6}px;
   }
   @media only screen and ${device.desktopXL} {
     padding: ${100 * 2.2}px ${70 * 2.2}px;
-  }
-`;
-
-const FormFieldContainer = styled(FlexContainer)`
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 20px;
-
-  @media only screen and ${device.mobileS} {
-
-  }
-  @media only screen and ${device.tablet} {
-    margin-bottom: ${20 * 0.9}px;
-  }
-
-  @media only screen and ${device.laptopL} {
-    margin-bottom: ${20 * 0.9}px;
-  }
-  @media only screen and ${device.desktop} {
-  }
-  @media only screen and ${device.desktopL} {
-    margin-bottom: ${20 * 1.6}px;
-  }
-  @media only screen and ${device.desktopXL} {
-    margin-bottom: ${20 * 2.2}px;
   }
 `;
 
@@ -132,6 +183,86 @@ export const CardElementContainer = styled.div`
   }
 `;
 
+export const PaymentMethodContainer = styled(FlexContainer)`
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @media only screen and ${device.mobileS} {
+    padding: 40px 0;
+    justify-content: center;
+  }
+  @media only screen and ${device.tablet} {
+  }
+  @media only screen and ${device.laptopL} {
+  }
+  @media only screen and ${device.desktop} {
+  }
+  @media only screen and ${device.desktopL} {
+  }
+  @media only screen and ${device.desktopXL} {
+  }
+`
+
+type PaymentMethodTypes = {
+  selected: boolean;
+  filler?: boolean;
+}
+export const PaymentMethod = styled(FlexContainer)<PaymentMethodTypes>`
+cursor: ${props => props.filler ? "auto" : "pointer"};
+border: ${props => props.selected ? "2px solid black" : !props.filler ? "1px solid gray" : "0"};
+height: 120px;
+width: 120px;
+margin-right: 20px;
+margin-bottom: 20px; 
+flex-direction: column;
+// transition: 0.3s all ease-in;
+
+@media only screen and ${device.mobileS} {
+  width: 40%;
+}
+@media only screen and ${device.tablet} {
+}
+@media only screen and ${device.laptopL} {
+}
+@media only screen and ${device.desktop} {
+}
+@media only screen and ${device.desktopL} {
+  height: ${120 * 1.6}px;
+width: ${120 * 1.6}px;
+margin-right: ${20 * 1.6}px;
+margin-bottom: ${20 * 1.6}px; 
+}
+@media only screen and ${device.desktopXL} {
+  height: ${120 * 2.2}px;
+  width: ${120 * 2.2}px;
+  margin-right: ${20 * 2.2}px;
+  margin-bottom: ${20 * 2.2}px; 
+}
+`
+
+export const PaymentMethodLogo = styled.img`
+  width: 90px;
+  height: auto;
+
+  @media only screen and ${device.mobileS} {
+    width: 40%;
+  }
+  @media only screen and ${device.tablet} {
+  }
+  @media only screen and ${device.laptopL} {
+  }
+  @media only screen and ${device.desktop} {
+  }
+  @media only screen and ${device.desktopL} {
+    width: ${90 * 1.6}px;
+  }
+  @media only screen and ${device.desktopXL} {
+    width: ${90 * 2.2}px;
+  }
+`
+
 export const DonateHeading1 = styled(Heading1)`
   @media only screen and ${device.mobileS} {
     font-size: 2.2rem;
@@ -194,7 +325,7 @@ export const DonateParagraph = styled(Paragraph)`
   }
 `;
 
-const Label = styled.label<TypesHeading>`
+export const Label = styled.h4<TypesHeading>`
 color: #000;
 font-size: 1rem;
 font-family: ${(props) => (props.poppins ? "Poppins" : "PT Serif")}, sans-serif;
@@ -232,9 +363,13 @@ font-weight: ${(props) => (props.poppins ? "700" : "400")};
   font-size: ${(props) => props.poppins && "0.9rem"}
   margin-bottom: 9px;
 }
+@media only screen and ${device.tablet} {
+  font-size: ${(props) => props.poppins && "0.9rem"}
+  margin-bottom: 15px;
+}
 @media only screen and ${device.laptopL} {
   font-size: ${(props) => props.poppins && "0.9rem"}
-  margin-bottom: 9px;
+  margin-bottom: 15px;
 }
 @media only screen and ${device.desktop} {
   font-size: ${(props) => props.poppins && "1rem"};
@@ -242,7 +377,7 @@ font-weight: ${(props) => (props.poppins ? "700" : "400")};
 }
 @media only screen and ${device.desktopL} {
   font-size: ${(props) => props.poppins && "1.6rem"};
-  margin-bottom: 16px;
+  margin-bottom: 16px; 
 };
 @media only screen and ${device.desktopXL} {
   font-size: ${(props) => props.poppins && "2.2rem"};
@@ -281,10 +416,11 @@ export const CardWarning = styled.p`
   }
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   border: 1px solid rgb(216, 216, 216);
   border-radius: 5px;
   width: 300px;
+  margin-bottom: 20px;
   padding: 0.7rem;
   font-family: "PT Serif";
   font-size: 1rem;
@@ -303,6 +439,7 @@ const Input = styled.input`
     width: ${300 * 0.9}px;
     padding: ${0.7 * 0.9}rem;
     font-size: ${1 * 0.9}rem;
+    margin-bottom: ${20 * 0.9}px;
     &:focus {
       border: ${1 * 0.9}px solid rgb(216, 216, 216);
     }
@@ -313,6 +450,7 @@ const Input = styled.input`
     width: ${300 * 0.9}px;
     padding: ${0.7 * 0.9}rem;
     font-size: ${1 * 0.9}rem;
+    margin-bottom: ${20 * 0.9}px;
     &:focus {
       border: ${1 * 0.9}px solid rgb(216, 216, 216);
     }
@@ -324,6 +462,7 @@ const Input = styled.input`
     width: ${300 * 1.6}px;
     padding: ${0.7 * 1.6}rem;
     font-size: ${1 * 1.6}rem;
+    margin-bottom: ${20 * 1.6}px;
     &:focus {
       border: ${1 * 1.6}px solid rgb(216, 216, 216);
     }
@@ -333,6 +472,7 @@ const Input = styled.input`
     width: ${300 * 2.2}px;
     padding: ${0.7 * 2.2}rem;
     font-size: ${1 * 2.2}rem;
+    margin-bottom: ${20 * 2.2}px;
     &:focus {
       border: ${1 * 2.2}px solid rgb(216, 216, 216);
     }
@@ -367,7 +507,8 @@ export const SubmitButton = styled.input<TypesButton>`
 
   @media only screen and ${device.mobileS} {
     font-size: ${buttonFontSize.XS};
-    padding: ${20 * 0.9}px ${35 * 0.6}px;
+    width: 100%;
+    padding: ${20 * 1.2}px ${35 * 0.6}px;
     border-radius: 2px;
   }
 
@@ -393,53 +534,3 @@ export const SubmitButton = styled.input<TypesButton>`
   }
 `;
 
-interface FormFieldTypes {
-  label: string;
-  type: string;
-  name: string;
-  placeholder: string;
-  required?: boolean;
-}
-
-const FormField: FC<FormFieldTypes> = ({
-  label,
-  type,
-  name,
-  placeholder,
-  required,
-}) => {
-  return (
-    <FormFieldContainer>
-      <Label poppins htmlFor={name}>
-        {label}
-      </Label>
-      <Input
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        required={required ? true : false}
-      />
-    </FormFieldContainer>
-  );
-};
-
-export const BillingDetailsFields: FC = () => {
-  return (
-    <>
-      <FormField
-        name="amount"
-        label="Amount"
-        type="text"
-        placeholder=".00"
-        required
-      />
-      <FormField name="name" label="Name" type="text" placeholder="Anonymous" />
-      <FormField
-        name="location"
-        label="Location"
-        type="text"
-        placeholder="Philadelphia"
-      />
-    </>
-  );
-};

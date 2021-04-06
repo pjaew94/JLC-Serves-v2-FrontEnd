@@ -14,7 +14,7 @@ export const WhoWeArePageContainer = styled(PageContainer)<ReactScrollType>`
   padding-top: 5%;
   padding-bottom: 5%;
   @media only screen and ${device.mobileS} {
-    padding-top 10%;
+
   }
   @media only screen and ${device.tablet} {
     padding-top 10%;
