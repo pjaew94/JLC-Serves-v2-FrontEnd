@@ -86,10 +86,7 @@ const paymentMethods = [
   {
     logo: paypalLogo,
     state: "paypal",
-  },
-  {
-    state: "empty",
-  },
+  }
 ];
 
 

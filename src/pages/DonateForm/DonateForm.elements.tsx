@@ -248,6 +248,7 @@ export const PaymentMethodLogo = styled.img`
 
   @media only screen and ${device.mobileS} {
     width: 40%;
+    width: ${90 * 1.1}px;
   }
   @media only screen and ${device.tablet} {
   }
