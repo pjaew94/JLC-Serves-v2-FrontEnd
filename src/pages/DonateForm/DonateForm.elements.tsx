@@ -84,11 +84,11 @@ align-items: flex-start;
 }
 @media only screen and ${device.desktopL} {
   width: 50%;
-  padding-right: 20%;
+  padding-right: 15%;
 }
 @media only screen and ${device.desktopXL} {
   width: 50%;
-  padding-right: 20%;
+  padding-right: 15%;
 }
 `
 export const Form = styled.form`
@@ -293,35 +293,38 @@ export const DonateHeading1 = styled(Heading1)`
   }
 `;
 export const DonateParagraph = styled(Paragraph)`
-  margin-bottom: 20px;
-  width: 300px;
+  margin-bottom: 40px;
+  width: 500px;
   line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media only screen and ${device.mobileS} {
-
+    width: 300px;
   }
   @media only screen and ${device.tablet} {
-    margin-bottom: ${20 * 0.9}px;
-    width: ${300 * 0.9}px;
+    margin-bottom: ${40 * 0.9}px;
+    width: ${500 * 1.1}px;
     line-height: ${1.5 * 0.9}rem;
   }
 
   @media only screen and ${device.laptopL} {
-    margin-bottom: ${20 * 0.9}px;
-    width: ${300 * 0.9}px;
+    margin-bottom: ${40 * 0.9}px;
+    width: ${500 * 0.9}px;
     line-height: ${1.5 * 0.9}rem;
   }
   @media only screen and ${device.desktop} {
 
   }
   @media only screen and ${device.desktopL} {
-    margin-bottom: ${20 * 1.6}px;
-    width: ${300 * 1.6}px;
+    margin-bottom: ${40 * 1.6}px;
+    width: ${500 * 1.6}px;
     line-height: ${1.5 * 1.6}rem;
   }
   @media only screen and ${device.desktopXL} {
-    margin-bottom: ${20 * 2.2}px;
-    width: ${300 * 2.2}px;
+    margin-bottom: ${40 * 2.2}px;
+    width: ${500 * 2.2}px;
     line-height: ${1.5 * 2.2}rem;
   }
 `;
