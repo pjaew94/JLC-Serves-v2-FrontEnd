@@ -21,14 +21,14 @@ interface HamburgerType {
 const HamburgerFC: FC<HamburgerType> = ({ setShowNavigator, showNavigator }) => {
   return (
     <>
-      {window.location.pathname !== "/donations" ? (
+      {window.location.pathname === "/" ? (
         <Hamburger onClick={() => setShowNavigator(!showNavigator)}>
           <HamburgerLine1 />
           <HamburgerLine2 />
         </Hamburger>
-      ) : (
+      ) : window.location.pathname === "/donations" ? (
         <MemberLoginButton to={"/donate"}>Donate</MemberLoginButton>
-      )}
+      ) : <MemberLoginButton to={"/"}>Home</MemberLoginButton>}
     </>
   );
 };

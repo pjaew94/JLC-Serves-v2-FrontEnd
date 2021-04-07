@@ -111,14 +111,14 @@ export const MemberLoginButton = styled(Link)`
       color: ${colors.primaryColor};
   }
 @media only screen and ${device.mobileS} {
-    padding: ${13 * 0.9}px ${15 * 0.9}px;
+    padding: ${10 * 0.9}px ${15 * 0.9}px;
     border-radius: ${2 * 0.9}px;
-    font-size: ${1 * 1.2}rem;
+    font-size: ${1 * 0.9}rem;
 }
 @media only screen and ${device.tablet} {
     padding: ${13 * 1.2}px ${15 * 1.2}px;
     border-radius: ${2 * 0.9}px;
-    font-size: ${1 * 1.4}rem;
+    font-size: ${1 * 1.2}rem;
 }
 @media only screen and ${device.laptopL} {
     padding: ${13 * 0.9}px ${15 * 0.9}px;
