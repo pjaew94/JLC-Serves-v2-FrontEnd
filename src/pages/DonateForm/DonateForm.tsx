@@ -27,6 +27,7 @@ import jcbLogo from "../../media/paymentLogos/jcbLogo.svg";
 import dinersLogo from "../../media/paymentLogos/dinersLogo.svg";
 import paypalLogo from "../../media/paymentLogos/paypalLogo.svg";
 import Paypal from "../../components/Paypal/Paypal";
+import Navbar from "../../components/Navbar/Navbar";
 
 // Stripe Initiation
 const testKey =
@@ -152,6 +153,7 @@ const DonateForm: FC = () => {
 
   return (
     <>
+    <Navbar />
       <FormContainer>
         <Form onSubmit={handleSubmit(onSubmit)} style={{ overflow: "hidden" }}>
           <DonateHeading1>Donate</DonateHeading1>

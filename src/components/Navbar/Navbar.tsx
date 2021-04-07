@@ -68,7 +68,7 @@ const Navbar: FC = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollingUp]);
 
-  const smoothLinks = window.location.pathname !== "/donations" && (
+  const smoothLinks = window.location.pathname === "/" && (
     <>
       <NavbarScrollLink to="home" spy={true} smooth={true} duration={1500}>
         Home
@@ -106,9 +106,9 @@ const Navbar: FC = () => {
         ) : (
           <LinksContainer>
             {smoothLinks}
-            <MemberLoginButton to={"/donate"}>Donate</MemberLoginButton>
+            {window.location.pathname === "/donate" ?  <MemberLoginButton to={"/"}>Home</MemberLoginButton>: <MemberLoginButton to={"/donate"}>Donate</MemberLoginButton>}
           </LinksContainer>
-        )}
+        )} 
       </NavbarContainer>
       {isMobileS || tablet ? (
         <Navigator navigator={showNavigator}>

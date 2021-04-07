@@ -23,7 +23,7 @@ const WhatWeDo: FC = () => {
     },
     {
       src: "https://jlc-serves.s3.amazonaws.com/wwdImg2.jpeg",
-      text: "Pastor Kim with the Sleeping Bag Project founders!",
+      text: " Pastor Kim with the founders of the Sleeping Bag Project!",
     },
   ];
 
