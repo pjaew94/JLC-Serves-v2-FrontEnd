@@ -26,7 +26,7 @@ const Donations: FC = () => {
 
   useEffect(() => {
     dispatch(getDonations());
-  }, []);
+  }, [donation]);
 
   return (
     <>
@@ -44,7 +44,7 @@ const Donations: FC = () => {
           </>
         )}
         <DonationsContainer>
-          {donation && donation.donations.map((item, i) => {
+          {donation.donations && donation.donations.map((item, i) => {
             return (
               <DonationCard key={i} lastCard={i + 1 !== donation.donations.length && true}>
                 <LogoContainer>

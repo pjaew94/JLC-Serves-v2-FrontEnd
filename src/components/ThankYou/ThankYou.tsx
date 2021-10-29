@@ -24,7 +24,7 @@ const ThankYou: FC = () => {
            <TYHeading1>Special Thank You</TYHeading1>
            <TYLogoContainer>
             {logos.map((item, i) => {
-                return <TYLogo src={item.src} />
+                return <TYLogo key={i} src={item.src} />
             })}
 
            </TYLogoContainer>
