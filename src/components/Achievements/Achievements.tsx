@@ -19,7 +19,7 @@ const Achievements: FC = () => {
 
   const achievements = [
     {
-      number: "3600+",
+      number: "6000+",
       text: "Meals and Beverages"
     },
     {
@@ -27,11 +27,11 @@ const Achievements: FC = () => {
       text: "Shoes and Boots"
     },
     {
-      number: "100+",
+      number: "250+",
       text: "Sleeping Bags"
     },
     {
-      number: "300+",
+      number: "500+",
       text: "Toiletries"
     }
   ]
